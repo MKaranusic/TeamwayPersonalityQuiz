@@ -1,3 +1,57 @@
-<p>
-  quiz works!
-</p>
+<div class="container-fluid">
+
+  <div class="row quiz-container" *ngIf="!displayScore">
+    <div class="col">
+      <div class="row title-row">
+        <div class="col">
+          <h2 class="text-center">
+            Are You an Extrovert or Introvert?
+          </h2>
+          <p class="text-center">
+            Discover where you fall on the introvert-extrovert spectrum.
+          </p>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" role="alert" *ngIf="!dynamicForm.valid">
+        <span>All questions need to be answered before you can submit the test</span>
+      </div>
+
+      <div class="row quiz-container-row">
+        <div class="col" [formGroup]="dynamicForm">
+          <app-question *ngFor="let question of (questions$ | async); let i = index" [question]="question"
+            [questionFormGroup]="questionsFormArray.controls[i]"></app-question>
+        </div>
+      </div>
+
+      <div class="row error-row" *ngIf="">
+        <div class="col">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button (click)="onSubmit()" [disabled]="!dynamicForm.valid">Submit Test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="score-container row" *ngIf="displayScore">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center">
+            Your scored: {{ totalScore }}
+          </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center">You are an {{ personality }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

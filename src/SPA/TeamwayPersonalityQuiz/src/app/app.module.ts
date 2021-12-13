@@ -7,18 +7,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { QuestionComponent } from './pages/quiz/components/question/question.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    QuizComponent
+    QuizComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,11 @@
+<div class="row" [formGroup]="questionFormGroup">
+  <div class="row">
+    <div class="col">
+      <h4>{{ question.text }}</h4>
+      <div *ngFor="let answer of question.answers" class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" formControlName="answer" [value]="answer.score">{{ answer.text }}
+        </label>
+      </div>
+    </div>
+  </div>
