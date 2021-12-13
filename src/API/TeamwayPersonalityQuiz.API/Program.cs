@@ -8,6 +8,17 @@ using TeamwayPersonalityQuiz.Services.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin();
+        builder.AllowAnyHeader();
+        builder.AllowAnyMethod();
+    });
+});
+
 builder.Services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("TestDb"));
 builder.Services.AddScoped<ApiContext>();
 
@@ -30,6 +41,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 
