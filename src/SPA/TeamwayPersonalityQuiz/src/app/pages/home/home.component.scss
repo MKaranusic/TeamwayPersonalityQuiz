@@ -1,0 +1,23 @@
+.container-fluid {
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    color: white;
+    height: 100vh;
+
+    .title-row {
+        padding-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        font-size: 25px;
+
+        background: white;
+        color: #0093e9;
+        font-weight: bold;
+        margin-top: 150px;
+        border-radius: 50px;
+        padding: 15px 25px 15px 25px;
+        border: none;
+    }
+}
