@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API\TeamwayPersonalityQuiz.csproj" />
+    <ProjectReference Include="..\TeamwayPersonalityQuiz.API\TeamwayPersonalityQuiz.csproj" />
   </ItemGroup>
 
 </Project>
